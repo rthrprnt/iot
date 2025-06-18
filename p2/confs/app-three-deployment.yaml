@@ -14,6 +14,9 @@ spec:
     spec:
       containers:
         - name: app-three-container
-          image: nginxdemos/hello
+          image: arthurprnt/hello-k8s:latest
+          env:
+            - name: MESSAGE
+              value: "Hello from app3"
           ports:
-            - containerPort: 80
+            - containerPort: 8080
