@@ -1,0 +1,20 @@
+# 👇 Le Deployment décrit comment Kubernetes doit déployer et maintenir une application
+apiVersion: apps/v1  # API pour les objets de type Deployment
+kind: Deployment
+metadata:
+  name: app-one                     # Nom unique du déploiement                
+spec:
+  replicas: 1                      # 🧬 Nombre de copies (pods) de l'app à maintenir
+  selector:
+    matchLabels:
+      app: app-one-pod                  # 🔗 Lien entre le deployment et les pods qu’il gère
+  template:
+    metadata:
+      labels:
+        app: app-one-pod                # Ces labels seront appliqués aux pods créés
+    spec:
+      containers:
+        - name: app-one-container
+          image: nginxdemos/hello        # 🔧 Image Docker à lancer dans ce pod
+          ports:
+            - containerPort: 80    # Port exposé à l'intérieur du pod

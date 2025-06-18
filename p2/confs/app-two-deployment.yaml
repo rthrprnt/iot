@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-two
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: app-two-pod
+  template:
+    metadata:
+      labels:
+        app: app-two-pod
+    spec:
+      containers:
+        - name: app-two-container
+          image: nginxdemos/hello
+          ports:
+            - containerPort: 80
