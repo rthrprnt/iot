@@ -15,6 +15,9 @@ spec:
     spec:
       containers:
         - name: app-one-container
-          image: nginxdemos/hello        # 🔧 Image Docker à lancer dans ce pod
+          image: arthurprnt/hello-k8s:latest        # 🔧 Image Docker à lancer dans ce pod
+          env:
+            - name: MESSAGE
+              value: "Hello from app1"  # Variable d'environnement pour l'application
           ports:
-            - containerPort: 80    # Port exposé à l'intérieur du pod
+            - containerPort: 8080    # Port exposé à l'intérieur du pod

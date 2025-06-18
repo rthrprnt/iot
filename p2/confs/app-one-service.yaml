@@ -8,4 +8,4 @@ spec:
     app: app-one-pod                   # 🔗 Associe le service aux pods ayant ce label
   ports:
     - port: 80                    # Port d'entrée du service
-      targetPort: 80              # Port dans le pod
+      targetPort: 8080              # Port dans le pod
