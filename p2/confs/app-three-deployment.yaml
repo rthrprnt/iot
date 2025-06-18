@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-three
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-three-pod
+  template:
+    metadata:
+      labels:
+        app: app-three-pod
+    spec:
+      containers:
+        - name: app-three-container
+          image: nginxdemos/hello
+          ports:
+            - containerPort: 80

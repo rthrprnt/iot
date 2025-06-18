@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-one-ingress
+  #annotations:
+    #nginx.ingress.kubernetes.io/rewrite-target: /   # Optionnel, utile pour certains chemins
+spec:
+  rules:
+    - host: app1.com             # 🧭 Nom de domaine (Host header) ciblé
+      http:
+        paths:
+          - path: /                  # URL de base à intercepter
+            pathType: Prefix         # Match si l’URL commence par ce chemin
+            backend:
+              service:
+                name: app-one # 🔗 Service à appeler si la règle est satisfaite
+                port:
+                  number: 80
+    - host: app2.com             # 🧭 Nom de domaine (Host header) ciblé
+      http:
+        paths:
+          - path: /                  # URL de base à intercepter
+            pathType: Prefix         # Match si l’URL commence par ce chemin
+            backend:
+              service:
+                name: app-two # 🔗 Service à appeler si la règle est satisfaite
+                port:
+                  number: 80
+    - host:             # 🧭 Nom de domaine (Host header) ciblé
+      http:
+        paths:
+          - path: /                  # URL de base à intercepter
+            pathType: Prefix         # Match si l’URL commence par ce chemin
+            backend:
+              service:
+                name: app-three # 🔗 Service à appeler si la règle est satisfaite
+                port:
+                  number: 80
