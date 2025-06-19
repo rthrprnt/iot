@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app                     # Nom unique du déploiement                
+  name: app              
 spec:
-  replicas: 1                      # 🧬 Nombre de copies (pods) de l'app à maintenir
+  replicas: 1
   selector:
     matchLabels:
-      app: app-pod                  # 🔗 Lien entre le deployment et les pods qu’il gère
+      app: app-pod
   template:
     metadata:
       labels:
-        app: app-pod                # Ces labels seront appliqués aux pods créés
+        app: app-pod
     spec:
       containers:
         - name: app-container
-          image: wil42/playground:v1
+          image: wil42/playground:v2
           ports:
-            - containerPort: 8888    # Port exposé à l'intérieur du pod
+            - containerPort: 8888
