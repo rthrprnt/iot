@@ -1,4 +1,4 @@
-apiVersion: apps/v1  # API pour les objets de type Deployment
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: app                     # Nom unique du déploiement                
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: app-container
-          image: wil42/playground:v2        # 🔧 Image Docker à lancer dans ce pod
+          image: wil42/playground:v2
           ports:
-            - containerPort: 8080    # Port exposé à l'intérieur du pod
+            - containerPort: 8888    # Port exposé à l'intérieur du pod
