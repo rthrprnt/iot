@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: app-container
-          image: wil42/playground:v1        # 🔧 Image Docker à lancer dans ce pod
+          image: wil42/playground:v2        # 🔧 Image Docker à lancer dans ce pod
           ports:
             - containerPort: 8080    # Port exposé à l'intérieur du pod
