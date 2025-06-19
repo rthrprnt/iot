@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-one            # Nom du service utilisé par l’Ingress ou d'autres apps
+  name: app           # Nom du service utilisé par l’Ingress ou d'autres apps
 spec:
   type: ClusterIP                 # Type de service (ClusterIP = accessible seulement à l’intérieur du cluster)
   selector:
-    app: app-one-pod                   # 🔗 Associe le service aux pods ayant ce label
+    app: app-pod                   # 🔗 Associe le service aux pods ayant ce label
   ports:
     - port: 80                    # Port d'entrée du service
       targetPort: 8080              # Port dans le pod
