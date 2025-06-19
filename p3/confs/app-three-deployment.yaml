@@ -1,25 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-two
+  name: app-three
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: app-two-pod
+      app: app-three-pod
   template:
     metadata:
       labels:
-        app: app-two-pod
+        app: app-three-pod
     spec:
       containers:
-        - name: app-two-container
+        - name: app-three-container
           image: arthurprnt/hello-k8s:latest
           env:
             - name: MESSAGE
-              value: "Hello from app2"
+              value: "Hello from app3"
           ports:
             - containerPort: 8080
-
-
-            
